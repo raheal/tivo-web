@@ -1,3 +1,26 @@
-<p>
-  history works!
-</p>
+<table class="table table-bordered table-sm">
+    <thead>
+      <tr>
+        <th>Url</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Output</th>
+        <th>Stage</th>
+        <th>Status</th>
+        <th>Message</th>
+        <th>Timestamp</th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of downloadLogData | keyvalue">
+        <td>{{r.value.request.url}}</td>
+        <td>{{r.value.request.startFileNumber}}</td>
+        <td>{{r.value.request.endFileNumber}}</td>
+        <td>{{r.value.request.outputFileName}}</td>
+        <td>{{r.value.stage}}</td>
+        <td>{{r.value.status}}</td>
+        <td>{{r.value.statusMessage}}</td>
+        <td>{{r.value.timestamp}}</td>
+      </tr>
+    </tbody>
+  </table>

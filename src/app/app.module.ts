@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DownloadComponent } from './download/download.component';
 import { HistoryComponent } from './history/history.component';
 import { ActiveComponent } from './active/active.component';
+import  {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ActiveComponent } from './active/active.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

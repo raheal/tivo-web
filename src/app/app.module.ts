@@ -9,6 +9,7 @@ import { DownloadComponent } from './download/download.component';
 import { HistoryComponent } from './history/history.component';
 import { ActiveComponent } from './active/active.component';
 import  {HttpClientModule} from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import  {HttpClientModule} from '@angular/common/http';
     NavbarComponent,
     DownloadComponent,
     HistoryComponent,
-    ActiveComponent
+    ActiveComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

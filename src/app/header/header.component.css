@@ -1,0 +1,42 @@
+
+    body, .nav-link, .tab-section {
+        cursor: default;
+
+    }
+    .tab-content {
+        line-height: 1;
+    }
+
+
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs  {
+        color: #dee2e6;
+        background-color: #0062cc;
+        border-color: #dee2e6 #dee2e6 #fff;
+    }
+    
+
+    /* for the links on the ribbon */
+    .nav-link {
+        display: block;
+        padding: .5rem 1rem;
+        color: white;
+        padding-left:10px;
+        padding-top:2px;
+        padding-bottom:6px;
+    }
+
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color:  #0062cc;
+        color: white;
+        font-size: 8pt; 
+        font-family: Segoe UI;
+        padding: 2px;
+
+    }
+
+

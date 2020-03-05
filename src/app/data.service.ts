@@ -10,7 +10,7 @@ export class DataService {
 
 
   getDownloadLogData() {
-    return this._http.get("http://localhost:8080/api/v1/record");
+    return this._http.get("http://localhost:8080/api/v1/download/log");
   }
 
 

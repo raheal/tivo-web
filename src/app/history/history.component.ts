@@ -15,7 +15,8 @@ export class HistoryComponent implements OnInit {
   ngOnInit() {
      this._dataService.getDownloadLogData().subscribe(data => {
        this.downloadLogData = data;
-     });
+     })
   }
+
 
 }

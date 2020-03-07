@@ -40,3 +40,11 @@
     }
 
 
+.ribbonButton {
+    text-align:center; 
+    padding: 6px;
+}
+
+.ribbonButton:hover {
+    border: 1px solid gray;
+}

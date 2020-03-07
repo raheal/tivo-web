@@ -1,0 +1,31 @@
+{
+    "system" : {
+        "total" : 100.00,
+        "used" : 50.00,
+        "free" : 50.00
+    },
+    "downloads" : {
+        "total" : 100,
+        "success" : 50,
+        "fail" : 50,
+        "filesystem" : {
+            "totalNumberOfFiles" : 100,
+            "totalSize" : 10.0,
+            "unit" : "GB"
+        },
+        "history" : {
+            "one_week" : {
+                "total" : 100
+            },
+            "two_week" : {
+                "total" : 100
+            },
+            "three_week" : {
+                "total" : 100
+            },
+            "one_month" : {
+                "total" : 100
+            }
+        }
+    }
+}

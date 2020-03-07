@@ -10,6 +10,8 @@ import { HistoryComponent } from './history/history.component';
 import { ActiveComponent } from './active/active.component';
 import  {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
+import { StatusPipe } from './status.pipe';
+import { StatusComponent } from './status/status.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FooterComponent } from './footer/footer.component';
     DownloadComponent,
     HistoryComponent,
     ActiveComponent,
-    FooterComponent
+    FooterComponent,
+    StatusPipe,
+    StatusComponent
   ],
   imports: [
     BrowserModule,

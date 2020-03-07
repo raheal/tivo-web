@@ -1,4 +1,6 @@
 <div id="downloadLogDiv">
+<form>
+  <input type="text" name="search" [(ngModel)]="search" />
   <table id="downloadLogTable" class="table table-bordered table-sm table-condensed table-hover table-striped">
     <thead>
       <tr>
@@ -13,17 +15,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let r of downloadLogData | keyvalue">
-        <td>{{r.value.request.url}}</td>
-        <td>{{r.value.request.startFileNumber}}</td>
-        <td>{{r.value.request.endFileNumber}}</td>
-        <td>{{r.value.request.outputFileName}}</td>
-        <td>{{r.value.stage}}</td>
-        <td>{{r.value.status | status}}</td>
-        <td>{{r.value.statusMessage}}</td>
-        <td>{{r.value.timestamp | date : 'full'}}</td>
+      <tr *ngFor="let r of downloadLogData | keyvalue  | log : search; let i = index">
+        <td style="width: 20%">{{r.value.request.url}}</td>
+        <td style="width: 2%">{{r.value.request.startFileNumber}}</td>
+        <td style="width: 2%">{{r.value.request.endFileNumber}}</td>
+        <td style="width: 5%">{{r.value.request.outputFileName}}</td>
+        <td style="width: 5%">{{r.value.stage}}</td>
+        <td style="width: 4%">{{r.value.status | status}}</td>
+        <td style="width: 7%">{{r.value.statusMessage}}</td>
+        <td style="width: 10%">{{r.value.timestamp | date : 'full'}}</td>
       </tr>
     </tbody>
   </table>
+</form>
+
 </div>
   

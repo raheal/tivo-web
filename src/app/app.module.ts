@@ -12,6 +12,8 @@ import  {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { StatusPipe } from './status.pipe';
 import { StatusComponent } from './status/status.component';
+import { LogPipe } from './log.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { StatusComponent } from './status/status.component';
     ActiveComponent,
     FooterComponent,
     StatusPipe,
-    StatusComponent
+    StatusComponent,
+    LogPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

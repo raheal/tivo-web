@@ -10,6 +10,8 @@ export class HistoryComponent implements OnInit {
 
   downloadLogData : any;
 
+  search: string;
+
   constructor(private _dataService : DataService) { }
 
   ngOnInit() {

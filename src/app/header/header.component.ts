@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  response : any;
+  
+  sourceUrl : string;
+
+  outputName : string;
+
+  constructor(private _dataService : DataService) { }
 
   title="Tivo Management Console"
 
+  submitDownload() {
+    this._dataService.submitDownloadRequest(this.sourceUrl, this.outputName).subscribe(data => {
+      this.response = data;
+    })
+  }
+
   ngOnInit() {
   }
+
+
+
 
 }

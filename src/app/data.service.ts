@@ -18,6 +18,18 @@ export class DataService {
     return this._http.get("http://localhost:8080/api/v1/download/status/all");
   }
 
+  submitDownloadRequest(_url, _outputFileName) {
+    return this._http.post<any>('http://localhost:8080/api/v1/download', 
+    {
+      url : _url,
+      outputFileName : _outputFileName,
+      startFileNumber : 1,
+      endFileNumber : 2000,
+      isStream : false,
+      mediaMetadata : null
+    })
+  }
+
 }
 
 

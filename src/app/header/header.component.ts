@@ -22,7 +22,17 @@ export class HeaderComponent implements OnInit {
     this._dataService.submitDownloadRequest(this.sourceUrl, this.outputName).subscribe(data => {
       this.response = data;
     })
+    this.resetFields();   
   }
+
+  resetFields() {
+    this.sourceUrl = "";
+    this.outputName = "";
+  }
+
+  
+
+
 
   ngOnInit() {
   }

@@ -24,8 +24,8 @@ export class DataService {
       url : _url,
       outputFileName : _outputFileName,
       startFileNumber : 1,
-      endFileNumber : 2000,
-      isStream : false,
+      endFileNumber : 1000,
+      isStream : true,
       mediaMetadata : null
     })
   }

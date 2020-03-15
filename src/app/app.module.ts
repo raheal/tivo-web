@@ -14,6 +14,7 @@ import { StatusPipe } from './status.pipe';
 import { StatusComponent } from './status/status.component';
 import { LogPipe } from './log.pipe';
 import { FormsModule } from '@angular/forms';
+import { DownloadModalComponent } from './download-modal/download-modal.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     StatusPipe,
     StatusComponent,
-    LogPipe
+    LogPipe,
+    DownloadModalComponent
   ],
   imports: [
     BrowserModule,

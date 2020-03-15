@@ -100,6 +100,10 @@
   <label>&nbsp;Output Name:&nbsp;</label>
   <input type="text" name="outputName" [(ngModel)]="outputName">
   <button style="cursor:unset" (click)="submitDownload()">Go</button>
+  <button data-toggle="modal" data-target="#myModal">
+    Go With
+  </button>
+  <app-download-modal></app-download-modal>
   </div>
 </div>
 

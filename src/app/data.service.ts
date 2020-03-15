@@ -30,6 +30,20 @@ export class DataService {
     })
   }
 
+
+
+  submitCustomDownloadRequest(_url, _outputFileName, _startFileNumber, _endFileNumber, _isStream) {
+    return this._http.post<any>('http://localhost:8080/api/v1/download', 
+    {
+      url : _url,
+      outputFileName : _outputFileName,
+      startFileNumber : _startFileNumber,
+      endFileNumber : _endFileNumber,
+      isStream : _isStream,
+      mediaMetadata : null
+    })
+  }
+
 }
 
 

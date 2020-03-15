@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-download-modal',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DownloadModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _dataService : DataService) { }
+
+  url : string;
+
+  outputFileName : string;
+
+  startFileNumber : number;
+
+  endFileNumber : number;
+
+  isStream : boolean;
 
   ngOnInit() {
   }
+
+
+  submitDownload() {
+    //this._dataService.submitCustomDownloadRequest(this.url, this.outputFileName,this.startFileNumber, this.endFileNumber, this.isStream);
+
+    console.log("stream? " + this.isStream);
+  }
+
+
 
 }

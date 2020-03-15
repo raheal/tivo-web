@@ -13,16 +13,20 @@ export class StatusComponent implements OnInit {
 
   constructor(private _dataService : DataService) { }
 
-  ngOnInit() {
 
+  runPolledStatus() {
     const source = interval(10000);
     source.subscribe(val => this._dataService.getDownloadStatusData().subscribe(data => {
       this.downloadStatusData = data;
     }));
+  }
 
-    // this._dataService.getDownloadStatusData().subscribe(data => {
-    //   this.downloadStatusData = data;
-    // });
+  ngOnInit() {
+    this._dataService.getDownloadStatusData().subscribe(data => {
+      this.downloadStatusData = data;
+    });
+
+    this.runPolledStatus();
 
   }
 

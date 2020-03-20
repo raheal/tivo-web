@@ -36,6 +36,11 @@ th {
     color: white;
 }
 
+.IN_PROGRESS {
+    background-image: linear-gradient(  rgb(255, 191, 0) 5% , rgb(159, 143, 96) 70%);
+    color: white;
+}
+
 .SUCCESS {
     background-image: linear-gradient( rgb(9, 189, 9) 5% , rgb(16, 90, 57) 70%);
     color: white;

@@ -15,6 +15,12 @@ export class StatusPipe implements PipeTransform {
     else if (value == "SUCCESS") {
       return "Success";
     }
+    else if (value == "IN_PROGRESS") {
+      return "In Progress";
+    }
+    else if (value == "ERROR") {
+      return "Error";
+    }
     return value;
   }
 

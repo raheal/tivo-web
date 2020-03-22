@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service';
 import { interval } from 'rxjs';
+import { ManagementService } from '../management.service';
 
 @Component({
   selector: 'app-status',
@@ -11,7 +12,7 @@ export class StatusComponent implements OnInit {
 
   downloadStatusData : any;
 
-  constructor(private _dataService : DataService) { }
+  constructor(private _dataService : DataService, private _managementService: ManagementService) { }
 
 
   runPolledStatus() {
@@ -30,6 +31,15 @@ export class StatusComponent implements OnInit {
 
   }
 
+  setTaskId(taskId : string) {
+    this._managementService.setSelectedTaskId(taskId);
+
+    // change the css colour property for selecting the row
+
+    let element = document.getElementById(taskId);
+
+
+  }
 
 
 

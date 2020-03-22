@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { ManagementService } from '../management.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   outputName : string;
 
-  constructor(private _dataService : DataService) { }
+  constructor(private _dataService : DataService, private _managementService : ManagementService) { }
 
   title="Tivo Management Console"
 
@@ -30,8 +31,11 @@ export class HeaderComponent implements OnInit {
     this.outputName = "";
   }
 
-  
 
+  eraseStreamData() {
+    let taskId = this._managementService.getSelectedTaskId();
+    console.log("Are you sure you want to delete stream data for [" + taskId + "] ?");
+  }
 
 
   ngOnInit() {

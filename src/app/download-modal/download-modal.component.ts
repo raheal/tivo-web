@@ -6,7 +6,7 @@ import { DataService } from '../data.service';
   templateUrl: './download-modal.component.html',
   styleUrls: ['./download-modal.component.css']
 })
-export class DownloadModalComponent implements OnInit {
+export class DownloadModalComponent{
 
   constructor(private _dataService : DataService) { }
 
@@ -20,14 +20,20 @@ export class DownloadModalComponent implements OnInit {
 
   isStream : boolean;
 
-  ngOnInit() {
+  submitDownload() {
+    this._dataService.submitCustomDownloadRequest(this.url, this.outputFileName,this.startFileNumber, this.endFileNumber, this.isStream).subscribe(data => {
+    });
+
+    this.resetFields();   
   }
 
 
-  submitDownload() {
-    //this._dataService.submitCustomDownloadRequest(this.url, this.outputFileName,this.startFileNumber, this.endFileNumber, this.isStream);
-
-    console.log("stream? " + this.isStream);
+  resetFields() {
+    this.url = "";
+    this.outputFileName = "";
+    this.endFileNumber = null;
+    this.startFileNumber = null;
+    this.isStream = false;
   }
 
 

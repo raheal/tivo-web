@@ -12,27 +12,27 @@
               <label>Enter specific parameters for the custom download</label>
               <div class="form-group">
                 <label for="usr">Url</label>
-                <input type="text" id="url" class="form-control form-control-sm" id="usr" name="url">
+                <input type="text" id="url" name="url" class="form-control form-control-sm" id="usr" name="url" [(ngModel)]="url">
               </div>
               <div class="form-group">
                 <label for="pwd">Output File Name:</label>
-                <input type="text" id="outputFileName" class="form-control form-control-sm" id="pwd" name="outputFileName">
+                <input type="text" id="outputFileName" name="outputFileName" class="form-control form-control-sm" [(ngModel)]="outputFileName" id="pwd" name="outputFileName">
               </div>
               <div class="form-group">
                 <label for="pwd">Start File Number</label>
-                <input type="text" id="startFileNumber" class="form-control form-control-sm" id="pwd" name="startFileNumber">
+                <input type="text" id="startFileNumber" name="startFileNumber" class="form-control form-control-sm" [(ngModel)]="startFileNumber" id="pwd" name="startFileNumber">
               </div>
               <div class="form-group">
                 <label for="pwd">End File Number</label>
-                <input type="text" id="endFileNumber" class="form-control form-control-sm" id="pwd" name="endFileNumber">
+                <input type="text" id="endFileNumber" name="endFileNumber" class="form-control form-control-sm" [(ngModel)]="endFileNumber" id="pwd" name="endFileNumber">
               </div>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="checkbox" id="isStream" class="form-check-input" value="true">Streamed File
+                  <input type="checkbox" id="isStream" name="isStream" class="form-check-input" value="true" [(ngModel)]="isStream">Streamed File
                 </label>
               </div>
               <div id="modalButtonPanel" style="text-align:right">
-                <button data-dismiss="modal">Submit</button>
+                <button data-dismiss="modal" (click)="submitDownload()">Submit</button>
                 <button data-dismiss="modal">Cancel</button>
               </div>
             </form>

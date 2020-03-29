@@ -42,17 +42,14 @@ export class StatusComponent implements OnInit {
 
   }
 
-  setTaskId(taskId : string) {
-    this._managementService.setSelectedTaskId(taskId);
+  setTaskId(task : any) {
 
-    let element: HTMLElement = document.getElementById(taskId);
-
-
+    this._managementService.setSelectedTask(task);
+    let element: HTMLElement = document.getElementById(task.id);
     if (this._previousSelectedElement != undefined) {
       this._previousSelectedElement.classList.remove("bg-primary");
       this._previousSelectedElement.style.color = "black";
     }
-
     if (element.classList.contains("bg-primary")) {
       element.classList.remove("bg-primary");
       element.style.color = "black";
@@ -60,13 +57,10 @@ export class StatusComponent implements OnInit {
       element.classList.add("bg-primary");
       element.style.color = "white";
     }
-
     this.setPreviousSelectedRow(element);
-
   }
 
   setPreviousSelectedRow(element : HTMLElement) : void  {
     this._previousSelectedElement = element;
   }
-
 }

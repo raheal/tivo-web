@@ -30,7 +30,9 @@ export class DataService {
     })
   }
 
-
+  deleteDownloadDirectory(_taskId) {
+    return this._http.put<Boolean>('http://localhost:8080/api/v1/settings/delete/' + _taskId, {});
+  }
 
   submitCustomDownloadRequest(_url, _outputFileName, _startFileNumber, _endFileNumber, _isStream) {
     //console.log(_url + ", "+ _outputFileName + ", "+_startFileNumber + ", "+ _endFileNumber + ", " + _isStream);

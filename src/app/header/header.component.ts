@@ -32,9 +32,15 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  eraseStreamData() {
-    let taskId = this._managementService.getSelectedTaskId();
-    console.log("Are you sure you want to delete stream data for [" + taskId + "] ?");
+  eraseStreamData() : Boolean {
+    let task : any = this._managementService.getSelectedTask();
+    console.log("Are you sure you want to delete stream data for [" + task.request.outputFileName + "] ?");
+    let deleteSuccessful : Boolean;
+    this._dataService.deleteDownloadDirectory(task.id).subscribe(data =>{
+      deleteSuccessful = data;
+    });
+    console.log("success deleting it? "+deleteSuccessful);
+    return deleteSuccessful;
   }
 
 

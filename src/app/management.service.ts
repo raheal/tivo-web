@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 
 interface IManagementService {  
 
-  eraseFile(taskId : string);
+  eraseFile(task : any);
 
-  setSelectedTaskId(taskId : string);
+  setSelectedTask(task : any);
 
-  getSelectedTaskId();
+  getSelectedTask();
 
 }
 
@@ -15,21 +15,21 @@ interface IManagementService {
 })
 export class ManagementService implements IManagementService{
 
-  taskId : string;
+  task : any;
 
   constructor() { }
 
-  eraseFile(taskId : string) {
-    console.log("run eraseFile");
+  eraseFile(task : any) {
+    console.log("run eraseFile for task id : " + task.id);
   }
 
-  setSelectedTaskId(taskId : string) {
-    this.taskId = taskId;
-    console.log(taskId);
+  setSelectedTask(task : any) {
+    this.task = task;
+    console.log(task);
   }
 
-  getSelectedTaskId() : string {
-    return this.taskId;
+  getSelectedTask() : string {
+    return this.task;
   }
 
 }

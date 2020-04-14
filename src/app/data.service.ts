@@ -26,7 +26,10 @@ export class DataService {
       startFileNumber : 1,
       endFileNumber : 2000,
       isStream : true,
-      mediaMetadata : null
+      mediaMetadata : null,
+      resumeDownload : false, // to be handled later
+      taskId : "",
+      processingPlan : "STRAIGHT_THROUGH"
     })
   }
 
@@ -35,7 +38,6 @@ export class DataService {
   }
 
   submitCustomDownloadRequest(_url, _outputFileName, _startFileNumber, _endFileNumber, _isStream) {
-    //console.log(_url + ", "+ _outputFileName + ", "+_startFileNumber + ", "+ _endFileNumber + ", " + _isStream);
     return this._http.post<any>('http://localhost:8080/api/v1/download', 
     {
       url : _url,

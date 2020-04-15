@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ManagementService } from '../management.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   outputName : string;
 
-  constructor(private _dataService : DataService, private _managementService : ManagementService) { }
+  constructor(private _dataService : DataService, private _managementService : ManagementService, private _toastrService : ToastrService) { }
 
   title="Tivo Management Console"
 
@@ -23,7 +24,8 @@ export class HeaderComponent implements OnInit {
     this._dataService.submitDownloadRequest(this.sourceUrl, this.outputName).subscribe(data => {
       this.response = data;
     })
-    this.resetFields();   
+    this._toastrService.success("Downloading "+ this.outputName); 
+    this.resetFields();
   }
 
   resetFields() {
@@ -38,6 +40,11 @@ export class HeaderComponent implements OnInit {
     let deleteSuccessful : Boolean;
     this._dataService.deleteDownloadDirectory(task.id).subscribe(data =>{
       deleteSuccessful = data;
+      if (deleteSuccessful) {
+        this._toastrService.success(task.request.outputFileName + " has been deleted successfully");
+      } else {
+        this._toastrService.error("An error occured whilst trying to delete "+task.request.outputFileName);
+      }
     });
     console.log("success deleting it? "+deleteSuccessful);
     return deleteSuccessful;

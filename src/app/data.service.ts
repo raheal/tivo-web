@@ -37,7 +37,8 @@ export class DataService {
     return this._http.put<Boolean>('http://localhost:8080/api/v1/settings/delete/' + _taskId, {});
   }
 
-  submitCustomDownloadRequest(_url, _outputFileName, _startFileNumber, _endFileNumber, _isStream) {
+  submitCustomDownloadRequest(_url, _outputFileName, _startFileNumber, _endFileNumber, _isStream, _processPlan) {
+    console.log("Process plan = "+_processPlan);
     return this._http.post<any>('http://localhost:8080/api/v1/download', 
     {
       url : _url,
@@ -45,7 +46,9 @@ export class DataService {
       startFileNumber : _startFileNumber,
       endFileNumber : _endFileNumber,
       isStream : _isStream,
-      mediaMetadata : null
+      mediaMetadata : null,
+      processingPlan : _processPlan,
+      taskId : ""
     })
   }
 

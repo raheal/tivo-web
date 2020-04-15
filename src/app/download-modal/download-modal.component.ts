@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-download-modal',
@@ -8,7 +9,7 @@ import { DataService } from '../data.service';
 })
 export class DownloadModalComponent{
 
-  constructor(private _dataService : DataService) { }
+  constructor(private _dataService : DataService, private _toastrService : ToastrService) { }
 
   url : string;
 
@@ -20,10 +21,12 @@ export class DownloadModalComponent{
 
   isStream : boolean;
 
-  submitDownload() {
-    this._dataService.submitCustomDownloadRequest(this.url, this.outputFileName,this.startFileNumber, this.endFileNumber, this.isStream).subscribe(data => {
-    });
+  processPlan : string = "STRAIGHT_THROUGH";
 
+  submitDownload() {
+    this._dataService.submitCustomDownloadRequest(this.url, this.outputFileName,this.startFileNumber, this.endFileNumber, this.isStream, this.processPlan).subscribe(data => {
+    });
+    this._toastrService.success("Downloading "+ this.outputFileName); 
     this.resetFields();   
   }
 

@@ -16,6 +16,7 @@ import { StatusComponent } from './status/status.component';
 import { LogPipe } from './log.pipe';
 import { FormsModule } from '@angular/forms';
 import { DownloadModalComponent } from './download-modal/download-modal.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DownloadModalComponent } from './download-modal/download-modal.componen
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    FormsModule
+    FormsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

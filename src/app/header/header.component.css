@@ -48,3 +48,9 @@
 .ribbonButton:hover {
     border: 1px solid gray;
 }
+
+
+.vl {
+    border-left: 1px solid lightgray;
+    height: 70px;
+  }

@@ -64,9 +64,95 @@
                             <label style="color:gray">Functions</label>
                         </div>
                     </div> <!-- ribbonButtonSection-->
-
-
                   </td>
+                <td>
+                    <!-- separator-->
+                    <div class="vl"></div>
+                </td>
+                  <td>
+                      <!-- put the next set of button here-->
+                      <div class="ribbonButtonSection">
+                        <div class="btn-group">
+
+                            <div class="ribbonButton" (click) = "eraseStreamData()">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-archive" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>Archive</label>
+                                </div>
+                            </div>
+
+                            <div class="ribbonButton" data-toggle="modal" data-target="#myModal">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-angle-double-right" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>Regenerate</label>
+                                </div>
+                            </div>
+
+
+
+                            <div class="ribbonButton" (click) = "eraseStreamData()">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-search" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>Explore</label>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div style="text-align:center;">
+                            <label style="color:gray">Stream Media</label>
+                        </div>
+                    </div> <!-- ribbonButtonSection-->  
+                  </td>
+                  <td>
+                    <!-- separator-->
+                    <div class="vl"></div>
+                </td>
+                
+                <td>
+                    <div class="ribbonButtonSection">
+                        <div class="btn-group">
+                            <div class="ribbonButton" data-toggle="modal" data-target="#myModal">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-remove" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>Clear</label>
+                                </div>
+                            </div>
+
+                            <div style="margin-left:8px;">
+                                <input type="checkbox" id="notstartedfilter" name="notstartedfilter" value="notstartedfilter">
+                                <label for="notstartedfilter"> Not Started</label><br>
+                                <input type="checkbox" id="inprogressfilter" name="inprogressfilter" value="inprogressfilter">
+                                <label for="inprogressfilter"> In Progress</label><br>
+                                <input type="checkbox" id="successfilter" name="successfilter" value="successfilter">
+                                <label for="successfilter"> Success</label><br>
+                            </div>
+                            <div style="margin-left:8px;">
+                                <input type="checkbox" id="errorfilter" name="deletedfilter" value="deletedfilter">
+                                <label for="deletedfilter"> Deleted</label><br>
+                                <input type="checkbox" id="cancelledfilter" name="cancelledfilter" value="cancelledfilter">
+                                <label for="cancelledfilter"> Cancelled</label><br>
+                                <input type="checkbox" id="errorfilter" name="errorfilter" value="errorfilter">
+                                <label for="errorfilter"> Error</label><br>
+                            </div>
+
+                        </div>
+                        <div style="text-align:center;">
+                            <label style="color:gray">Download Dashboard</label>
+                        </div>
+                    </div> <!-- ribbonButtonSection-->                     
+                </td>
+
+
                   <td>
                     <!-- put the next set of button here-->
                 </td>

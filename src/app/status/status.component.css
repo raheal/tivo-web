@@ -45,3 +45,18 @@ th {
     background-image: linear-gradient( rgb(9, 189, 9) 5% , rgb(16, 90, 57) 70%);
     color: white;
 }
+
+.CANCELLED {
+    background-color: gray;
+    color: white;
+}
+
+.DELETED {
+    background-color: gray;
+    color: white;
+}
+
+.ARCHIVED {
+    background-color: gray;
+    color: white;
+}

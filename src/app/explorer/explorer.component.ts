@@ -2,9 +2,7 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { DataService } from '../data.service';
 import { ManagementService } from '../management.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+
 @Component({
   selector: 'app-explorer',
   templateUrl: './explorer.component.html',

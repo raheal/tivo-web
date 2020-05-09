@@ -17,6 +17,8 @@ import { LogPipe } from './log.pipe';
 import { FormsModule } from '@angular/forms';
 import { DownloadModalComponent } from './download-modal/download-modal.component';
 import { ChartsModule } from 'ng2-charts';
+import { ExplorerComponent } from './explorer/explorer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ChartsModule } from 'ng2-charts';
     StatusPipe,
     StatusComponent,
     LogPipe,
-    DownloadModalComponent
+    DownloadModalComponent,
+    ExplorerComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

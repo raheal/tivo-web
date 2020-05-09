@@ -8,6 +8,9 @@ export class DataService {
 
   constructor(private _http : HttpClient) { }
 
+  getFileData(taskId : string) {
+    return this._http.get("http://localhost:8080/api/v1/summary/download/" + taskId);
+  }
 
   getDownloadLogData() {
     return this._http.get("http://localhost:8080/api/v1/download/log");

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 interface IManagementService {  
 
@@ -17,7 +18,15 @@ export class ManagementService implements IManagementService{
 
   task : any;
 
+  data : BehaviorSubject<any> = new BehaviorSubject<any>(this.task);
+  
   constructor() { }
+
+
+  // for testing purposes only
+
+
+
 
   eraseFile(task : any) {
     console.log("run eraseFile for task id : " + task.id);
@@ -25,12 +34,15 @@ export class ManagementService implements IManagementService{
 
   setSelectedTask(task : any) {
     this.task = task;
+    this.data.next(task);
     console.log(task);
   }
 
   getSelectedTask() : string {
     return this.task;
   }
+
+
 
 }
 

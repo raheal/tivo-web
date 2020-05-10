@@ -10,6 +10,19 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
+
+  showExplorePane(turnOn : boolean) : void {
+    let divElement = document.getElementById("explorePane");
+    if (turnOn) {
+      divElement.style.display = "table-cell";
+    } else {
+      divElement.style.display = "none";      
+    }
+  }
+
+
+
 
 }

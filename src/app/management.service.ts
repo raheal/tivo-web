@@ -16,17 +16,18 @@ interface IManagementService {
 })
 export class ManagementService implements IManagementService{
 
+  exploreButtonStatus : boolean;
+
   task : any;
 
   data : BehaviorSubject<any> = new BehaviorSubject<any>(this.task);
+
+  exploreStatusObservable : BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.exploreButtonStatus);
   
   constructor() { }
 
 
   // for testing purposes only
-
-
-
 
   eraseFile(task : any) {
     console.log("run eraseFile for task id : " + task.id);
@@ -42,6 +43,14 @@ export class ManagementService implements IManagementService{
     return this.task;
   }
 
+  setExploreButtonStatus(status : boolean) {
+    this.exploreButtonStatus = status;
+    this.exploreStatusObservable.next(status);
+  }
+
+  getExploreButtonStatus() {
+    return this.exploreButtonStatus;
+  }
 
 
 }

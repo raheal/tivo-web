@@ -10,6 +10,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HeaderComponent implements OnInit {
 
+  exploreButtonStatus : boolean;
+
   response : any;
   
   sourceUrl : string;
@@ -19,6 +21,16 @@ export class HeaderComponent implements OnInit {
   constructor(private _dataService : DataService, private _managementService : ManagementService, private _toastrService : ToastrService) { }
 
   title="Tivo Management Console"
+
+  setExploreButtonStatus() {
+    if (this.exploreButtonStatus) {
+      this.exploreButtonStatus = false;
+      this._managementService.setExploreButtonStatus(false);
+    } else {
+      this.exploreButtonStatus = true;
+      this._managementService.setExploreButtonStatus(true);
+    }
+  }
 
   submitDownload() {
     this._dataService.submitDownloadRequest(this.sourceUrl, this.outputName).subscribe(data => {

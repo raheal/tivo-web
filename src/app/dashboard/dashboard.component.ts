@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ManagementService } from '../management.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _managementService : ManagementService) { }
 
   ngOnInit() {
-
+    this._managementService.exploreStatusObservable.subscribe(data => {
+      if (data != undefined) {
+        console.log("int")
+        this.showExplorePane(data);
+      }
+    });
   }
 
   showExplorePane(turnOn : boolean) : void {

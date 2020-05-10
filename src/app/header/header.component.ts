@@ -64,6 +64,8 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit() {
+    this.exploreButtonStatus = false;
+    this._managementService.setExploreButtonStatus(false);
   }
 
 

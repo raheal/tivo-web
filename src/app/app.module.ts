@@ -19,6 +19,7 @@ import { DownloadModalComponent } from './download-modal/download-modal.componen
 import { ChartsModule } from 'ng2-charts';
 import { ExplorerComponent } from './explorer/explorer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TruncatePipe } from './truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LogPipe,
     DownloadModalComponent,
     ExplorerComponent,
-    DashboardComponent
+    DashboardComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,7 @@ import { ChartsModule } from 'ng2-charts';
 import { ExplorerComponent } from './explorer/explorer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TruncatePipe } from './truncate.pipe';
+import { FeatureDisabledModalComponent } from './feature-disabled-modal/feature-disabled-modal.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { TruncatePipe } from './truncate.pipe';
     DownloadModalComponent,
     ExplorerComponent,
     DashboardComponent,
-    TruncatePipe
+    TruncatePipe,
+    FeatureDisabledModalComponent
   ],
   imports: [
     BrowserModule,

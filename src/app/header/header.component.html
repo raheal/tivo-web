@@ -14,7 +14,7 @@
   <div id="tab-section">
   <ul class="nav nav-tabs" role="tablist" style="background-color:  #0062cc;">
       <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#home">Manage</a>
+          <a class="nav-link active" data-toggle="tab" href="#home">Download</a>
       </li>
       <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#menu1">Tools</a>
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
 
-                            <div class="ribbonButton">
+                            <div class="ribbonButton" (click) = "resumeDownload()">
                                 <div class="buttonIcon">
                                     <i class="fa fa-refresh" style="font-size:36px; color:gray"></i>
                                 </div>
@@ -74,7 +74,7 @@
                       <div class="ribbonButtonSection">
                         <div class="btn-group">
 
-                            <div class="ribbonButton" (click) = "eraseStreamData()">
+                            <div class="ribbonButton"  data-toggle="modal" data-target="#feature-disabled-modal">
                                 <div class="buttonIcon">
                                     <i class="fa fa-angle-double-down" style="font-size:36px; color:gray"></i>
                                 </div>
@@ -83,7 +83,7 @@
                                 </div>
                             </div>
 
-                            <div class="ribbonButton" data-toggle="modal" data-target="#myModal">
+                            <div class="ribbonButton" data-toggle="modal" data-target="#feature-disabled-modal">
                                 <div class="buttonIcon">
                                     <i class="fa fa-angle-double-right" style="font-size:36px; color:gray"></i>
                                 </div>
@@ -119,7 +119,7 @@
                 <td>
                     <div class="ribbonButtonSection">
                         <div class="btn-group">
-                            <div class="ribbonButton" data-toggle="modal" data-target="#myModal">
+                            <div class="ribbonButton" (click) = "clearDashboardAndLogCache()">
                                 <div class="buttonIcon">
                                     <i class="fa fa-remove" style="font-size:36px; color:gray"></i>
                                 </div>
@@ -184,6 +184,7 @@
     Go With
   </button>
   <app-download-modal></app-download-modal>
+  <app-feature-disabled-modal></app-feature-disabled-modal>
   </div>
 </div>
 

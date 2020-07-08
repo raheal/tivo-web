@@ -36,6 +36,26 @@ export class DataService {
     })
   }
 
+
+  resumeDownloadRequest(_url, _outputFileName, _taskId) {
+    return this._http.post<any>('http://localhost:8080/api/v1/download', 
+    {
+      url : _url,
+      outputFileName : _outputFileName,
+      startFileNumber : 1,
+      endFileNumber : 2000,
+      isStream : true,
+      mediaMetadata : null,
+      resumeDownload : true,
+      taskId : _taskId,
+      processingPlan : "STRAIGHT_THROUGH",
+    })
+  }
+
+
+
+
+
   deleteDownloadDirectory(_taskId) {
     return this._http.put<Boolean>('http://localhost:8080/api/v1/settings/delete/' + _taskId, {});
   }

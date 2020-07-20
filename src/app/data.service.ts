@@ -37,7 +37,7 @@ export class DataService {
   }
 
 
-  resumeDownloadRequest(_url, _outputFileName, _taskId) {
+  resumeDownloadRequest(_url, _outputFileName, _taskId, _processPlan) {
     return this._http.post<any>('http://localhost:8080/api/v1/download', 
     {
       url : _url,
@@ -48,7 +48,7 @@ export class DataService {
       mediaMetadata : null,
       resumeDownload : true,
       taskId : _taskId,
-      processingPlan : "STRAIGHT_THROUGH",
+      processingPlan : _processPlan,
     })
   }
 

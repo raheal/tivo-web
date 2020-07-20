@@ -15,19 +15,22 @@ export class StatusComponent implements OnInit {
 
   downloadStatusData : any;
 
+  statusFilterValue : string;
+
   constructor(private _dataService : DataService, private _managementService: ManagementService) { }
 
 
   runPolledStatus() {
+    
+    this._managementService.statusFilterObservable.subscribe(s => {
+      if (s!= undefined) {
+        this.statusFilterValue = s;
+      }
+    });
+
     const source = interval(10000);
     source.subscribe(val => this._dataService.getDownloadStatusData().subscribe(data => {
       this.downloadStatusData = data;
-
-      // if (this._previousSelectedElement != undefined) {
-      //   console.log("Running in here id = "+this._previousSelectedElement.id);
-      //   this._previousSelectedElement.style.backgroundColor="green";
-      // }
-
     }));
   }
 
@@ -39,6 +42,7 @@ export class StatusComponent implements OnInit {
     });
 
     this.runPolledStatus();
+
 
   }
 

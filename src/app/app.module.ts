@@ -21,6 +21,7 @@ import { ExplorerComponent } from './explorer/explorer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TruncatePipe } from './truncate.pipe';
 import { FeatureDisabledModalComponent } from './feature-disabled-modal/feature-disabled-modal.component';
+import { StatusFilterPipe } from './status-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FeatureDisabledModalComponent } from './feature-disabled-modal/feature-
     ExplorerComponent,
     DashboardComponent,
     TruncatePipe,
-    FeatureDisabledModalComponent
+    FeatureDisabledModalComponent,
+    StatusFilterPipe
   ],
   imports: [
     BrowserModule,

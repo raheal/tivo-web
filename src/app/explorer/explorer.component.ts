@@ -24,7 +24,6 @@ export class ExplorerComponent implements OnInit {
   ngOnInit() {
     this._managementService.data.subscribe(data => {
       if (data != undefined) {
-        console.log("Subscribe : "+data.id);
         this.getFileData(data.id);
       }
     });

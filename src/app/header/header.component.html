@@ -129,19 +129,19 @@
                             </div>
 
                             <div style="margin-left:8px;">
-                                <input type="checkbox" id="notstartedfilter" name="notstartedfilter" value="notstartedfilter">
+                                <input type="checkbox" [(ngModel)]="notstartedfilter" id="notstartedfilter" name="notstartedfilter" value="not_started" (change) = "setStatusFilter($event)">
                                 <label for="notstartedfilter"> Not Started</label><br>
-                                <input type="checkbox" id="inprogressfilter" name="inprogressfilter" value="inprogressfilter">
+                                <input type="checkbox" id="inprogressfilter" name="inprogressfilter" value="in_progress" (change) = "setStatusFilter($event)">
                                 <label for="inprogressfilter"> In Progress</label><br>
-                                <input type="checkbox" id="successfilter" name="successfilter" value="successfilter">
+                                <input type="checkbox" id="successfilter" name="successfilter" value="success" (change) = "setStatusFilter($event)">
                                 <label for="successfilter"> Success</label><br>
                             </div>
                             <div style="margin-left:8px;">
-                                <input type="checkbox" id="errorfilter" name="deletedfilter" value="deletedfilter">
+                                <input type="checkbox" id="errorfilter" name="deletedfilter" value="deleted">
                                 <label for="deletedfilter"> Deleted</label><br>
-                                <input type="checkbox" id="cancelledfilter" name="cancelledfilter" value="cancelledfilter">
+                                <input type="checkbox" id="cancelledfilter" name="cancelledfilter" value="cancelled">
                                 <label for="cancelledfilter"> Cancelled</label><br>
-                                <input type="checkbox" id="errorfilter" name="errorfilter" value="errorfilter">
+                                <input type="checkbox" id="errorfilter" name="errorfilter" value="error" (change) = "setStatusFilter($event)">
                                 <label for="errorfilter"> Error</label><br>
                             </div>
 

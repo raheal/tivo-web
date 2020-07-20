@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 interface IManagementService {  
 
@@ -20,12 +21,20 @@ export class ManagementService implements IManagementService{
 
   task : any;
 
+  statusFilters : string;
+
   data : BehaviorSubject<any> = new BehaviorSubject<any>(this.task);
 
   exploreStatusObservable : BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.exploreButtonStatus);
   
+  statusFilterObservable : BehaviorSubject<string> = new BehaviorSubject<string>(this.statusFilters);
+
   constructor() { }
 
+  setStatusFilters(filters : string) {
+    this.statusFilters = filters;
+    this.statusFilterObservable.next(this.statusFilters);
+  }
 
   // for testing purposes only
 

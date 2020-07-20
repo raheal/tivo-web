@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { DataService } from '../data.service';
 import { ManagementService } from '../management.service';
 import { ToastrService } from 'ngx-toastr';
@@ -19,9 +19,39 @@ export class HeaderComponent implements OnInit {
 
   outputName : string;
 
-  constructor(private _settingsService : SettingsService, private _dataService : DataService, private _managementService : ManagementService, private _toastrService : ToastrService) { }
+  statusFilterValue : string;
+  
+  previousEvent : any;
+
+  constructor(private _settingsService : SettingsService, private _dataService : DataService, 
+    private _managementService : ManagementService, private _toastrService : ToastrService) { }
 
   title="Tivo Management Console"
+
+  /**
+   * Plays with the checkboxes to make sure that filters are applied correcly
+   * e.target.value = the value of the checkbox selected
+   * @param e 
+   */
+  setStatusFilter(e) {
+    if (e.target.checked) {
+      console.log("checked " + e.target.value + "= "+e.target.checked);
+      this.statusFilterValue = e.target.value;
+      if  (this.previousEvent == undefined) {
+        this.previousEvent = e;
+      } 
+      else {
+        if (this.previousEvent.target.name != e.target.name) {
+          this.previousEvent.target.checked = false;
+          this.previousEvent = e;
+        }
+      }
+    } else {
+      console.log("unchecked " + e.target.value+ "= "+e.target.checked)
+      this.statusFilterValue = "";
+    }
+    this._managementService.setStatusFilters(this.statusFilterValue);
+  }
 
   setExploreButtonStatus() {
     if (this.exploreButtonStatus) {

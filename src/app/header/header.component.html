@@ -137,9 +137,9 @@
                                 <label for="successfilter"> Success</label><br>
                             </div>
                             <div style="margin-left:8px;">
-                                <input type="checkbox" id="errorfilter" name="deletedfilter" value="deleted">
+                                <input type="checkbox" id="errorfilter" name="deletedfilter" value="deleted" (change) = "setStatusFilter($event)">
                                 <label for="deletedfilter"> Deleted</label><br>
-                                <input type="checkbox" id="cancelledfilter" name="cancelledfilter" value="cancelled">
+                                <input type="checkbox" id="cancelledfilter" name="cancelledfilter" value="cancelled" (change) = "setStatusFilter($event)">
                                 <label for="cancelledfilter"> Cancelled</label><br>
                                 <input type="checkbox" id="errorfilter" name="errorfilter" value="error" (change) = "setStatusFilter($event)">
                                 <label for="errorfilter"> Error</label><br>

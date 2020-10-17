@@ -1,6 +1,15 @@
+<div id="navigationLogTab" style="padding: 2px; border-style: none; background-image: linear-gradient( #D8D8D8 5% , #F8F8FF 70%);">
+  <div id="buttonPanel" style="padding:6px">
+   <!-- <button style="cursor:unset" onclick="window.location.href = '/active';">Summary Panel</button>&nbsp; -->
+   <button style="cursor:unset" onclick="window.location.href = '/history';">Download Log</button>&nbsp;
+   <button style="cursor:unset" onclick="window.location.href = '/dashboard';">Live Dashboard</button>&nbsp;
+   <label>&nbsp;Filter by filename:&nbsp;</label>
+   <input type="text" size="50" name="search" [(ngModel)]="search" />
+   </div>
+ </div>
+
 <div id="downloadLogDiv">
 <form>
-  <input type="text" name="search" [(ngModel)]="search" />
   <table id="downloadLogTable" class="table table-bordered table-sm table-condensed table-hover table-striped">
     <thead>
       <tr>

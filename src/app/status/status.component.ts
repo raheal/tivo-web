@@ -3,6 +3,7 @@ import {DataService} from '../data.service';
 import { interval } from 'rxjs';
 import { ManagementService } from '../management.service';
 import { equalParamsAndUrlSegments } from '@angular/router/src/router_state';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-status',
@@ -11,13 +12,19 @@ import { equalParamsAndUrlSegments } from '@angular/router/src/router_state';
 })
 export class StatusComponent implements OnInit {
 
+  response : any;
+  
+  sourceUrl : string;
+
+  outputName : string;
+
   _previousSelectedElement : HTMLElement;
 
   downloadStatusData : any;
 
   statusFilterValue : string;
 
-  constructor(private _dataService : DataService, private _managementService: ManagementService) { }
+  constructor(private _dataService : DataService, private _managementService: ManagementService, private _toastrService : ToastrService) { }
 
 
   runPolledStatus() {
@@ -66,5 +73,22 @@ export class StatusComponent implements OnInit {
 
   setPreviousSelectedRow(element : HTMLElement) : void  {
     this._previousSelectedElement = element;
+  }
+
+
+
+  
+  submitDownload() {
+    this._dataService.submitDownloadRequest(this.sourceUrl, this.outputName).subscribe(data => {
+      this.response = data;
+    })
+    this._toastrService.success("Downloading "+ this.outputName); 
+    this.resetFields();
+  }
+
+  
+  resetFields() {
+    this.sourceUrl = "";
+    this.outputName = "";
   }
 }

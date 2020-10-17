@@ -119,6 +119,25 @@
                 <td>
                     <div class="ribbonButtonSection">
                         <div class="btn-group">
+
+                            <div class="ribbonButton" onclick="window.location.href = '/dashboard';">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-columns" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>View Dashboard</label>
+                                </div>
+                            </div>
+
+                            <div class="ribbonButton" onclick="window.location.href = '/history';">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-history" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>View Log</label>
+                                </div>
+                            </div>
+
                             <div class="ribbonButton" (click) = "clearDashboardAndLogCache()">
                                 <div class="buttonIcon">
                                     <i class="fa fa-remove" style="font-size:36px; color:gray"></i>
@@ -170,7 +189,7 @@
 
 </div> 
 
-<div id="navigationTab" style="padding: 2px; border-style: none; background-image: linear-gradient( #D8D8D8 5% , #F8F8FF 70%);">
+<!-- <div id="navigationTab" style="padding: 2px; border-style: none; background-image: linear-gradient( #D8D8D8 5% , #F8F8FF 70%);">
  <div id="buttonPanel" style="padding:6px">
   <button style="cursor:unset" onclick="window.location.href = '/active';">Summary Panel</button>&nbsp;
   <button style="cursor:unset" onclick="window.location.href = '/history';">Download Log</button>&nbsp;
@@ -183,9 +202,10 @@
   <button data-toggle="modal" data-target="#myModal">
     Go With
   </button>
-  <app-download-modal></app-download-modal>
-  <app-feature-disabled-modal></app-feature-disabled-modal>
   </div>
-</div>
+</div> -->
+
+<app-download-modal></app-download-modal>
+<app-feature-disabled-modal></app-feature-disabled-modal>
 
 </div>

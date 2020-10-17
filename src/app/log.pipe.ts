@@ -15,7 +15,7 @@ export class LogPipe implements PipeTransform {
     }
     
     return items.filter(singleItem =>
-      singleItem.value.request.url.toLowerCase().includes(field)
+      singleItem.value.request.outputFileName.toLowerCase().includes(field)
     );
 
   }

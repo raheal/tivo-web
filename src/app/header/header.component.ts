@@ -15,9 +15,9 @@ export class HeaderComponent implements OnInit {
 
   response : any;
   
-  sourceUrl : string;
+  // sourceUrl : string;
 
-  outputName : string;
+  // outputName : string;
 
   statusFilterValue : string;
   
@@ -89,13 +89,13 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  submitDownload() {
-    this._dataService.submitDownloadRequest(this.sourceUrl, this.outputName).subscribe(data => {
-      this.response = data;
-    })
-    this._toastrService.success("Downloading "+ this.outputName); 
-    this.resetFields();
-  }
+  // submitDownload() {
+  //   this._dataService.submitDownloadRequest(this.sourceUrl, this.outputName).subscribe(data => {
+  //     this.response = data;
+  //   })
+  //   this._toastrService.success("Downloading "+ this.outputName); 
+  //   this.resetFields();
+  // }
 
   resumeDownload() {
     let task : any = this._managementService.getSelectedTask();
@@ -117,10 +117,10 @@ export class HeaderComponent implements OnInit {
 
 
 
-  resetFields() {
-    this.sourceUrl = "";
-    this.outputName = "";
-  }
+  // resetFields() {
+  //   this.sourceUrl = "";
+  //   this.outputName = "";
+  // }
 
 
   eraseStreamData() : Boolean {

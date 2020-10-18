@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ActiveComponent} from './active/active.component';
-import { HistoryComponent } from './history/history.component';
-import { DownloadComponent } from './download/download.component';
-import { StatusComponent } from './status/status.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { ActiveComponent} from './tivo/active/active.component';
+import { HistoryComponent } from './tivo/history/history.component';
+import { DownloadComponent } from './tivo/download/download.component';
+import { StatusComponent } from './tivo/status/status.component';
+import { DashboardComponent } from './tivo/dashboard/dashboard.component';
 
 
 const routes: Routes = [

@@ -1,6 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { DataService } from '../data.service';
-import { ManagementService } from '../management.service';
+import { DataService } from '../../data.service';
+import { ManagementService } from '../../management.service';
 import { discardPeriodicTasks } from '@angular/core/testing';
 
 

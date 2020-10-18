@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ManagementService } from '../management.service';
+import { ManagementService } from '../../management.service';
 
 @Component({
   selector: 'app-dashboard',

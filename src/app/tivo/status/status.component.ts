@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../data.service';
+import {DataService} from '../../data.service';
 import { interval } from 'rxjs';
-import { ManagementService } from '../management.service';
+import { ManagementService } from '../../management.service';
 import { equalParamsAndUrlSegments } from '@angular/router/src/router_state';
 import { ToastrService } from 'ngx-toastr';
 

@@ -91,9 +91,6 @@
                                     <label>Regenerate</label>
                                 </div>
                             </div>
-
-
-
                             <div class="ribbonButton" (click) = "setExploreButtonStatus()">
                                 <div class="buttonIcon">
                                     <i class="fa fa-search" style="font-size:36px; color:gray"></i>
@@ -102,7 +99,14 @@
                                     <label>Explore</label>
                                 </div>
                             </div>
-
+                            <div class="ribbonButton" (click) = "setAutoRestartSwitch()">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-search" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>Auto-Restart {{autoRestartSwitch}} </label>
+                                </div>
+                            </div>
 
 
                         </div>

@@ -19,6 +19,8 @@ export class ManagementService implements IManagementService{
 
   exploreButtonStatus : boolean;
 
+  autoRestartSwitch : boolean;
+
   task : any;
 
   statusFilters : string;
@@ -59,6 +61,10 @@ export class ManagementService implements IManagementService{
 
   getExploreButtonStatus() {
     return this.exploreButtonStatus;
+  }
+
+  getAutoRestartSwitch() {
+    return this.autoRestartSwitch;
   }
 
 

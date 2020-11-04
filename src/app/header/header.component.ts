@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit {
 
   exploreButtonStatus : boolean;
 
+  autoRestartSwitch : boolean = false;
+
   response : any;
   
   // sourceUrl : string;
@@ -60,6 +62,16 @@ export class HeaderComponent implements OnInit {
     } else {
       this.exploreButtonStatus = true;
       this._managementService.setExploreButtonStatus(true);
+    }
+  }
+
+  setAutoRestartSwitch() {
+    if (this.autoRestartSwitch) {
+      this.autoRestartSwitch = false;
+      this._managementService.setAutoRestartSwitch(false);
+    } else {
+      this.autoRestartSwitch = true;
+      this._managementService.setAutoRestartSwitch(true);
     }
   }
 

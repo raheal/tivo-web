@@ -112,7 +112,7 @@ export class HeaderComponent implements OnInit {
   resumeDownload() {
     let task : any = this._managementService.getSelectedTask();
     console.log("URL = "+task.request.url+ ", "+task.request.outputFileName+", "+task.id);
-    this._dataService.resumeDownloadRequest(task.request.url, task.request.outputFileName, task.id, "STRAIGHT_THROUGH").subscribe(data => {
+    this._dataService.resumeDownloadRequest(task.request.url, task.request.outputFileName, task.id, "STRAIGHT_THROUGH", this._managementService.getAutoRestartSwitch()).subscribe(data => {
       this.response = data;
     })
     this._toastrService.success("Resuming "+ task.request.outputFileName); 
@@ -121,7 +121,7 @@ export class HeaderComponent implements OnInit {
   runCustomDownload(processPlan : string) {
     let task : any = this._managementService.getSelectedTask();
     console.log("Running job with process plan = "+processPlan + " = "+task.request.url+ ", "+task.request.outputFileName+", "+task.id);
-    this._dataService.resumeDownloadRequest(task.request.url, task.request.outputFileName, task.id, processPlan).subscribe(data => {
+    this._dataService.resumeDownloadRequest(task.request.url, task.request.outputFileName, task.id, processPlan, this._managementService.getAutoRestartSwitch()).subscribe(data => {
       this.response = data;
     })
     this._toastrService.success("Resuming "+ task.request.outputFileName);   

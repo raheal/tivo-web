@@ -31,7 +31,9 @@ export class ManagementService implements IManagementService{
   
   statusFilterObservable : BehaviorSubject<string> = new BehaviorSubject<string>(this.statusFilters);
 
-  constructor() { }
+  constructor() {
+    this.autoRestartSwitch = false;
+   }
 
   setStatusFilters(filters : string) {
     this.statusFilters = filters;
@@ -65,6 +67,10 @@ export class ManagementService implements IManagementService{
 
   getAutoRestartSwitch() {
     return this.autoRestartSwitch;
+  }
+
+  setAutoRestartSwitch(status : boolean) {
+    this.autoRestartSwitch = status;
   }
 
 

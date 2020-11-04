@@ -79,7 +79,8 @@ export class StatusComponent implements OnInit {
 
   
   submitDownload() {
-    this._dataService.submitDownloadRequest(this.sourceUrl, this.outputName).subscribe(data => {
+    console.log("Result = "+this._managementService.getAutoRestartSwitch())
+    this._dataService.submitDownloadRequest(this.sourceUrl, this.outputName, this._managementService.getAutoRestartSwitch()).subscribe(data => {
       this.response = data;
     })
     this._toastrService.success("Downloading "+ this.outputName); 

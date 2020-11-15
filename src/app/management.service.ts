@@ -19,6 +19,8 @@ export class ManagementService implements IManagementService{
 
   exploreButtonStatus : boolean;
 
+  discoverButtonStatus : boolean;
+
   autoRestartSwitch : boolean;
 
   task : any;
@@ -28,7 +30,10 @@ export class ManagementService implements IManagementService{
   data : BehaviorSubject<any> = new BehaviorSubject<any>(this.task);
 
   exploreStatusObservable : BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.exploreButtonStatus);
+
+  discoverStatusObservable : BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.discoverButtonStatus);
   
+
   statusFilterObservable : BehaviorSubject<string> = new BehaviorSubject<string>(this.statusFilters);
 
   constructor() {
@@ -59,6 +64,15 @@ export class ManagementService implements IManagementService{
   setExploreButtonStatus(status : boolean) {
     this.exploreButtonStatus = status;
     this.exploreStatusObservable.next(status);
+  }
+
+  setDiscoverButtonStatus(status : boolean) {
+    this.discoverButtonStatus = status;
+    this.discoverStatusObservable.next(status);
+  }
+
+  getDiscovereButtonStatus() {
+    return this.discoverButtonStatus;
   }
 
   getExploreButtonStatus() {

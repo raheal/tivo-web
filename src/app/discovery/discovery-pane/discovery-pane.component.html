@@ -1,0 +1,54 @@
+<div id="discoverDiv">
+  <div style="background-color:  #0062cc; color:white; font-family: sans-serif; font-size:10pt; padding:10px; padding-top: 10px;">
+    Discovery Parameters
+  </div>
+  <div id="discoverButtonPanel" style="background-image: linear-gradient( #b3b2b2 5% , #F8F8FF 70%); padding-top: 5px;">
+    <div class="btn-group">
+      <div class="buttonIcon">
+          <abbr title="New Mapping">
+          <i class="fa fa-download" style="font-size:20px; color:gray"></i>
+        </abbr>
+      </div>
+
+      <div class="buttonIcon">
+        <abbr title="Edit Mapping">
+        <i class="fa fa-refresh" style="font-size:20px; color:gray"></i>
+      </abbr>
+    </div>
+
+    <div class="buttonIcon">
+      <abbr title="Delete Mapping">
+      <i class="fa fa-remove" style="font-size:20px; color:gray"></i>
+    </abbr>
+    </div>
+    <div class="buttonIcon">
+      <abbr title="View Mapping">
+      <i class="fa fa-search" style="font-size:20px; color:gray"></i>
+    </abbr>
+  </div>
+
+    </div>
+  </div>
+  <form action="#">
+    <div class="form-group">
+      <label for="url">URL</label>
+      <input type="text" class="form-control form-control-sm" name="url" id="url">
+    </div>
+    <div class="form-group">
+      <label for="link">Discovery Link</label>
+      <input type="text" class="form-control form-control-sm" name="link" id="link">
+    </div>
+    <div class="form-group">
+      <label for="adapter">Adapter</label>
+      <select class="form-control form-control-sm" id="adapter" name="adapter">
+        <option>AdapterName1</option>
+        <option>AdapterName2</option>
+      </select>
+    </div>
+    <div id="modalButtonPanel" style="text-align:left">
+      <button data-dismiss="modal" (click)="submitDownload()">Fetch</button>
+      <button data-dismiss="modal">Copy</button> 
+      <button data-dismiss="modal">Submit</button>
+    </div>
+  </form>
+</div>

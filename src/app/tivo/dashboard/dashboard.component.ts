@@ -17,17 +17,35 @@ export class DashboardComponent implements OnInit {
         this.showExplorePane(data);
       }
     });
+
+    this._managementService.discoverStatusObservable.subscribe(data => {
+      if (data != undefined) {
+        console.log("discover")
+        this.showDiscoverPane(data);
+      }
+    });
+
   }
 
   showExplorePane(turnOn : boolean) : void {
     let divElement = document.getElementById("explorePane");
     if (turnOn) {
       divElement.style.display = "table-cell";
+      document.getElementById("discoverPane").style.display = "none"; //regardless
     } else {
       divElement.style.display = "none";      
     }
   }
 
+  showDiscoverPane(turnOn : boolean) : void {
+    let divElement = document.getElementById("discoverPane");
+    if (turnOn) {
+      divElement.style.display = "table-cell";
+      document.getElementById("explorePane").style.display = "none"; //regardless
+    } else {
+      divElement.style.display = "none";      
+    }
+  }
 
 
 

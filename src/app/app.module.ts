@@ -22,6 +22,7 @@ import { DashboardComponent } from './tivo//dashboard/dashboard.component';
 import { TruncatePipe } from './truncate.pipe';
 import { FeatureDisabledModalComponent } from './feature-disabled-modal/feature-disabled-modal.component';
 import { StatusFilterPipe } from './status-filter.pipe';
+import { DiscoveryPaneComponent } from './discovery/discovery-pane/discovery-pane.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { StatusFilterPipe } from './status-filter.pipe';
     DashboardComponent,
     TruncatePipe,
     FeatureDisabledModalComponent,
-    StatusFilterPipe
+    StatusFilterPipe,
+    DiscoveryPaneComponent
   ],
   imports: [
     BrowserModule,

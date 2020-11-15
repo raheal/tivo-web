@@ -1,0 +1,16 @@
+#discoverDiv {
+    margin-top: 1px;
+    height:76vh;
+    overflow: auto;
+    border: 1px solid rgb(116, 115, 115);
+    background-image: linear-gradient( #e0dfdf 5% , #ffffff 70%);
+}
+
+form {
+    padding: 5px;
+    font-size:10pt
+}
+
+.buttonIcon {
+    padding: 5px;
+}

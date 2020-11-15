@@ -13,14 +13,12 @@ export class HeaderComponent implements OnInit {
 
   exploreButtonStatus : boolean;
 
+  discoverButtonStatus : boolean;
+
   autoRestartSwitch : boolean = false;
 
   response : any;
   
-  // sourceUrl : string;
-
-  // outputName : string;
-
   statusFilterValue : string;
   
   previousEvent : any;
@@ -62,6 +60,17 @@ export class HeaderComponent implements OnInit {
     } else {
       this.exploreButtonStatus = true;
       this._managementService.setExploreButtonStatus(true);
+    }
+  }
+
+
+  setDiscoverButtonStatus() {
+    if(this.discoverButtonStatus) {
+      this.discoverButtonStatus = false;
+      this._managementService.setDiscoverButtonStatus(false);
+    } else {
+      this.discoverButtonStatus = true;
+      this._managementService.setDiscoverButtonStatus(true);
     }
   }
 

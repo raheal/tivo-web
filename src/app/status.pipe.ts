@@ -21,6 +21,15 @@ export class StatusPipe implements PipeTransform {
     else if (value == "ERROR") {
       return "Error";
     }
+    else if (value == "DELETED") {
+      return "Deleted";
+    }
+    else if (value == "CANCELLED") {
+      return "Cancelled";
+    }
+    else if (value == "ARCHIVED") {
+      return "Archived";
+    }
     return value;
   }
 

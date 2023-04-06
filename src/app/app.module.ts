@@ -6,17 +6,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { DownloadComponent } from './download/download.component';
-import { HistoryComponent } from './history/history.component';
-import { ActiveComponent } from './active/active.component';
+import { DownloadComponent } from './tivo/download/download.component';
+import { HistoryComponent } from './tivo/history/history.component';
+import { ActiveComponent } from './tivo//active/active.component';
 import  {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { StatusPipe } from './status.pipe';
-import { StatusComponent } from './status/status.component';
+import { StatusComponent } from './tivo//status/status.component';
 import { LogPipe } from './log.pipe';
 import { FormsModule } from '@angular/forms';
-import { DownloadModalComponent } from './download-modal/download-modal.component';
+import { DownloadModalComponent } from './tivo//download-modal/download-modal.component';
 import { ChartsModule } from 'ng2-charts';
+import { ExplorerComponent } from './tivo//explorer/explorer.component';
+import { DashboardComponent } from './tivo//dashboard/dashboard.component';
+import { TruncatePipe } from './truncate.pipe';
+import { FeatureDisabledModalComponent } from './feature-disabled-modal/feature-disabled-modal.component';
+import { StatusFilterPipe } from './status-filter.pipe';
+import { DiscoveryPaneComponent } from './discovery/discovery-pane/discovery-pane.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,13 @@ import { ChartsModule } from 'ng2-charts';
     StatusPipe,
     StatusComponent,
     LogPipe,
-    DownloadModalComponent
+    DownloadModalComponent,
+    ExplorerComponent,
+    DashboardComponent,
+    TruncatePipe,
+    FeatureDisabledModalComponent,
+    StatusFilterPipe,
+    DiscoveryPaneComponent
   ],
   imports: [
     BrowserModule,

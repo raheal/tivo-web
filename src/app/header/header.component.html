@@ -4,7 +4,7 @@
       PhoenixStudio&trade; AE Platform
   </div> -->
 <div id="title" style="background-color:  #0062cc;; height: 25px; color: white; text-align:center">
-  Tivo&trade; Management Console
+  Phoenix&trade; Management Studio
   <button type="button" class="close" aria-label="Close" style="color:white;">
           &times;
         </button>
@@ -14,13 +14,13 @@
   <div id="tab-section">
   <ul class="nav nav-tabs" role="tablist" style="background-color:  #0062cc;">
       <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#home">Manage</a>
+          <a class="nav-link active" data-toggle="tab" href="#home">Download</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#menu1">Tools</a>
+          <a class="nav-link" data-toggle="tab" href="#menu1">Media</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#menu2">Settings</a>
+          <a class="nav-link" data-toggle="tab" href="#menu2">Client</a>
       </li>
    </ul>
    <div class="tab-content">
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
 
-                            <div class="ribbonButton">
+                            <div class="ribbonButton" (click) = "resumeDownload()">
                                 <div class="buttonIcon">
                                     <i class="fa fa-refresh" style="font-size:36px; color:gray"></i>
                                 </div>
@@ -64,9 +64,125 @@
                             <label style="color:gray">Functions</label>
                         </div>
                     </div> <!-- ribbonButtonSection-->
-
-
                   </td>
+                <td>
+                    <!-- separator-->
+                    <div class="vl"></div>
+                </td>
+                  <td>
+                      <!-- put the next set of button here-->
+                      <div class="ribbonButtonSection">
+                        <div class="btn-group">
+
+                            <div class="ribbonButton"  data-toggle="modal" data-target="#feature-disabled-modal">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-angle-double-down" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>Archive</label>
+                                </div>
+                            </div>
+
+                            <div class="ribbonButton" (click) = "runCustomDownload('PROCESS_AND_AGGREGATE_ONLY')">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-angle-double-right" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>Regenerate</label>
+                                </div>
+                            </div>
+                            <div class="ribbonButton" (click) = "setExploreButtonStatus()">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-search" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>Explore</label>
+                                </div>
+                            </div>
+                            <div class="ribbonButton" (click) = "setAutoRestartSwitch()">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-refresh" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>Auto-Restart {{autoRestartSwitch ? 'Off' : 'On'}} </label>
+                                </div>
+                            </div>
+                            <div class="ribbonButton" (click) = "setDiscoverButtonStatus()">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-search" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>Discover</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div style="text-align:center;">
+                            <label style="color:gray">Stream Media</label>
+                        </div>
+                    </div> <!-- ribbonButtonSection-->  
+                  </td>
+                  <td>
+                    <!-- separator-->
+                    <div class="vl"></div>
+                </td>
+                
+                <td>
+                    <div class="ribbonButtonSection">
+                        <div class="btn-group">
+
+                            <div class="ribbonButton" onclick="window.location.href = '#/dashboard';">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-columns" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>View Dashboard</label>
+                                </div>
+                            </div>
+
+                            <div class="ribbonButton" onclick="window.location.href = '#/history';">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-history" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>View Log</label>
+                                </div>
+                            </div>
+
+                            <div class="ribbonButton" (click) = "clearDashboardAndLogCache()">
+                                <div class="buttonIcon">
+                                    <i class="fa fa-remove" style="font-size:36px; color:gray"></i>
+                                </div>
+                                <div class="buttonText">
+                                    <label>Clear</label>
+                                </div>
+                            </div>
+
+                            <div style="margin-left:8px;">
+                                <input type="checkbox" id="notstartedfilter" name="notstartedfilter" value="not_started" (change) = "setStatusFilter($event)">
+                                <label for="notstartedfilter"> Not Started</label><br>
+                                <input type="checkbox" id="inprogressfilter" name="inprogressfilter" value="in_progress" (change) = "setStatusFilter($event)">
+                                <label for="inprogressfilter"> In Progress</label><br>
+                                <input type="checkbox" id="successfilter" name="successfilter" value="success" (change) = "setStatusFilter($event)">
+                                <label for="successfilter"> Success</label><br>
+                            </div>
+                            <div style="margin-left:8px;">
+                                <input type="checkbox" id="errorfilter" name="deletedfilter" value="deleted" (change) = "setStatusFilter($event)">
+                                <label for="deletedfilter"> Deleted</label><br>
+                                <input type="checkbox" id="cancelledfilter" name="cancelledfilter" value="cancelled" (change) = "setStatusFilter($event)">
+                                <label for="cancelledfilter"> Cancelled</label><br>
+                                <input type="checkbox" id="errorfilter" name="errorfilter" value="error" (change) = "setStatusFilter($event)">
+                                <label for="errorfilter"> Error</label><br>
+                            </div>
+
+                        </div>
+                        <div style="text-align:center;">
+                            <label style="color:gray">Download Dashboard</label>
+                        </div>
+                    </div> <!-- ribbonButtonSection-->                     
+                </td>
+
+
                   <td>
                     <!-- put the next set of button here-->
                 </td>
@@ -84,11 +200,11 @@
 
 </div> 
 
-<div id="navigationTab" style="padding: 2px; border-style: none; background-image: linear-gradient( #D8D8D8 5% , #F8F8FF 70%);">
+<!-- <div id="navigationTab" style="padding: 2px; border-style: none; background-image: linear-gradient( #D8D8D8 5% , #F8F8FF 70%);">
  <div id="buttonPanel" style="padding:6px">
   <button style="cursor:unset" onclick="window.location.href = '/active';">Summary Panel</button>&nbsp;
   <button style="cursor:unset" onclick="window.location.href = '/history';">Download Log</button>&nbsp;
-  <button style="cursor:unset" onclick="window.location.href = '/status';">Live Dashboard</button>&nbsp;
+  <button style="cursor:unset" onclick="window.location.href = '/dashboard';">Live Dashboard</button>&nbsp;
   <label>&nbsp;Source URL:&nbsp;</label>
   <input type="text" size="100" name="sourceUrl" [(ngModel)]="sourceUrl" >&nbsp;
   <label>&nbsp;Output Name:&nbsp;</label>
@@ -97,8 +213,10 @@
   <button data-toggle="modal" data-target="#myModal">
     Go With
   </button>
-  <app-download-modal></app-download-modal>
   </div>
-</div>
+</div> -->
+
+<app-download-modal></app-download-modal>
+<app-feature-disabled-modal></app-feature-disabled-modal>
 
 </div>

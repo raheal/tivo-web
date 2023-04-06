@@ -1,0 +1,66 @@
+#buttonPanel {
+    font-size:9pt;
+}
+
+
+#downloadStatusDiv {
+    margin-top: 1px;
+    height:71vh;
+    overflow: auto;
+    border: 1px solid black;
+}
+
+.table {
+    font-family: sans-serif;
+    font-size: 8pt;
+    cursor: default;
+}
+
+thead {
+    /*background-color: #006080;*/
+    background-image: linear-gradient( #D8D8D8 5% , #F8F8FF 70%);
+    color: black;
+}
+
+th {
+    font-weight: normal;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color:#F8F8F8
+}
+
+.ERROR {
+    background-color: red;
+    color: white;
+}
+
+.NOT_STARTED {
+    background-color: gray;
+    color: white;
+}
+
+.IN_PROGRESS {
+    background-image: linear-gradient(  rgb(255, 191, 0) 5% , rgb(159, 143, 96) 70%);
+    color: white;
+}
+
+.SUCCESS {
+    background-image: linear-gradient( rgb(9, 189, 9) 5% , rgb(16, 90, 57) 70%);
+    color: white;
+}
+
+.CANCELLED {
+    background-color: gray;
+    color: white;
+}
+
+.DELETED {
+    background-color: gray;
+    color: white;
+}
+
+.ARCHIVED {
+    background-color: gray;
+    color: white;
+}

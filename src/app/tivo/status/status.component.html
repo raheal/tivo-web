@@ -1,0 +1,47 @@
+<div id="navigationTab" style="padding: 2px; border-style: none; background-image: linear-gradient( #D8D8D8 5% , #F8F8FF 70%); display:flex; white-space:nowrap">
+  <div id="buttonPanel" style="padding:6px">
+   <!-- <button style="cursor:unset" onclick="window.location.href = '/active';">Summary Panel</button>&nbsp; -->
+   <button style="cursor:unset" onclick="window.location.href = '/history';">Download Log</button>&nbsp;
+   <button style="cursor:unset" onclick="window.location.href = '/dashboard';">Live Dashboard</button>&nbsp;
+   <label>&nbsp;Source URL:&nbsp;</label>
+   <input type="text" size="100" name="sourceUrl" [(ngModel)]="sourceUrl" >&nbsp;
+   <label>&nbsp;Output Name:&nbsp;</label>
+   <input type="text" name="outputName" [(ngModel)]="outputName" (keyup.enter)="submitDownload()">
+   <button style="cursor:unset" (click)="submitDownload()">Go</button>
+   <button data-toggle="modal" data-target="#myModal">
+     Go With
+   </button>
+   <!-- <app-download-modal></app-download-modal> -->
+   <app-feature-disabled-modal></app-feature-disabled-modal>
+   </div>
+ </div>
+
+<div id="downloadStatusDiv">
+  <table id="downloadStatusTable" class="table table-bordered table-sm table-condensed table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Url</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Output</th>
+        <th>Stage</th>
+        <th>Status</th>
+        <th>Message</th>
+        <th>Timestamp</th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of downloadStatusData | keyvalue | statusFilter : statusFilterValue; let i = index" id ={{r.value.id}} (click)="setTaskId(r.value)">
+        <td style="width: 20%">{{r.value.request.url | truncate}}</td>
+        <td style="width: 2%">{{r.value.request.startFileNumber}}</td>
+        <td style="width: 2%">{{r.value.request.endFileNumber}}</td>
+        <td style="width: 5%">{{r.value.request.outputFileName}}</td>
+        <td style="width: 5%">{{r.value.stage}}</td>
+        <td style="width: 4%" class="{{r.value.status}}">{{r.value.status | status}}</td>
+        <td style="width: 7%">{{r.value.statusMessage | truncate}}</td>
+        <td style="width: 10%">{{r.value.timestamp | date : 'full'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  

@@ -1,0 +1,15 @@
+    <div>
+        <div style="display: block; height:10%; width:50%; border: 1px solid gray;">
+            <div id="titlebar" style="height:2%; background-color:gray; color:white;">           
+                Titlebar
+            </div>
+                <canvas baseChart
+                        [datasets]="barChartData"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [chartType]="barChartType">
+                </canvas>
+
+        </div>
+      </div>
